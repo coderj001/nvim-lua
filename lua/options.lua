@@ -38,7 +38,8 @@ local function load_options()
         backspace='eol,start,indent';
         mat = 2;
         foldcolumn = 1;
-        foldmethod = 'indent';
+        foldmethod = 'expr';
+        foldexpr =  'nvim_treesitter#foldexpr()';
         foldnestmax = 10;
         nofoldenable = true;
         foldlevel = 2;

@@ -9,15 +9,21 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-   -- You can alias plugin names
-  use {
-    'kyazdani42/nvim-tree.lua', as = 'nvimtree', requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  use {
+    use 'wbthomason/packer.nvim'
+    use {
+    'kyazdani42/nvim-web-devicons', config = function() require 'config/web-devicons' end,
+    }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+    config = function () require 'config/treesitter' end
+    }
+    use { 'nvim-treesitter/playground'}
+    use {
+    'kyazdani42/nvim-tree.lua', as = 'nvimtree', requires = {'kyazdani42/nvim-web-devicons'},
+    config = function () require 'config/nerdtree' end,
+    }
+    use {
     'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  use {'dracula/vim', as = 'dracula'}
+    }
+    use {'dracula/vim', as = 'dracula', config=function () vim.cmd('colorscheme dracula') end}
 end)
