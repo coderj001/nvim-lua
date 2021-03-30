@@ -12,5 +12,12 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
    -- You can alias plugin names
+  use {
+    'kyazdani42/nvim-tree.lua', as = 'nvimtree', requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  use {
+    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
   use {'dracula/vim', as = 'dracula'}
 end)
