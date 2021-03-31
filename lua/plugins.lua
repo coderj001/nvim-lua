@@ -14,7 +14,7 @@ return require('packer').startup(function()
     'kyazdani42/nvim-web-devicons', config = function() require 'config/web-devicons' end,
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-    config = function () require 'config/treesitter' end
+    config = function () require 'config/treesitter' end,
     }
     use { 'nvim-treesitter/playground'}
     use {
@@ -22,7 +22,7 @@ return require('packer').startup(function()
     config = function () require 'config/nerdtree' end,
     }
     use {
-    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+    'glepnir/galaxyline.nvim', branch = 'main', config = function() require 'statusline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
     }
     use {'dracula/vim', as = 'dracula', config=function () vim.cmd('colorscheme dracula') end}

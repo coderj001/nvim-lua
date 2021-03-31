@@ -20,12 +20,11 @@ RUN echo 'nvim --version' >> ~/.bashrc
 RUN git clone https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-RUN apt-get install -y python3-pip lua5.3
+RUN apt-get install -y python3-pip lua5.3 nodejs npm
 RUN pip3 install pynvim
+RUN npm i tree-sitter-cli
 
 RUN mkdir -p ~/.config/nvim
-
-ADD ./* ~/.config/nvim/
 
 WORKDIR /root
 ENTRYPOINT /bin/bash
