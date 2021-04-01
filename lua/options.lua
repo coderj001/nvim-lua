@@ -1,3 +1,4 @@
+local glb = require('global')
 local function bind_option(options)
   for k, v in pairs(options) do
     if v == true or v == false then
@@ -8,6 +9,12 @@ local function bind_option(options)
   end
 end
 
+local function bind_extra_cmd(options)
+    for optionCount=1, #options do
+        vim.cmd(options[optionCount])
+    end
+end
+
 local function load_options()
     local global_local = {
         t_Co = 256;
@@ -15,8 +22,7 @@ local function load_options()
         relativenumber = true;
         ma = true;
         cursorline = true;
-        history = 500;
-        autoread =true;
+        history = 500; autoread =true;
         so = 7;
         langmenu = 'en';
         wildmode = 'longest,list,full';
@@ -55,4 +61,23 @@ local function load_options()
     bind_option(global_local)
 end
 
+function load_extra_options()
+    local options = {
+        "filetype plugin on",
+        "filetype indent on",
+        "cabbr Q q",
+        "cabbr Q! q!",
+        "cabbr W! w!",
+        "cabbr W w",
+        "cabbr WA wa",
+        "cabbr Wa wa",
+        "cabbr Wq wq",
+        "cabbr WQ wq",
+        "cabbr Qa qa",
+        "cabbr QA qa"
+    }
+    bind_extra_cmd(options)
+end
+
 load_options()
+load_extra_options()

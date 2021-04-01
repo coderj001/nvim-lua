@@ -16,7 +16,7 @@ require "nvim-web-devicons".setup {
         name = "js"
       },
       py = {
-        icon = "🐍 ",
+        icon = "🐍",
         color = "#20c40a",
         name = "png"
       },

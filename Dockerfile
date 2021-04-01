@@ -26,5 +26,8 @@ RUN npm i -g tree-sitter-cli --unsafe-perm=true --allow-root
 
 RUN mkdir -p ~/.config/nvim
 
+RUN apt-get install -y \
+    ripgrep ctags
+
 WORKDIR /root
 ENTRYPOINT /bin/bash
