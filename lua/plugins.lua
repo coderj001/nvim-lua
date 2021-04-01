@@ -11,6 +11,7 @@ end
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'neovim/nvim-lspconfig'
+    use {'kabouzeid/nvim-lspinstall', require='neovim/nvim-lspconfig'}
     use 'hrsh7th/nvim-compe'
     use 'hrsh7th/vim-vsnip'
     use {
@@ -29,4 +30,10 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
     }
     use {'rockerBOO/boo-colorscheme-nvim', branch = 'main', as = 'boo', config=function () vim.cmd('colorscheme boo') end}
+
+    use {'nvim-lua/popup.nvim'}
+    use {'nvim-lua/plenary.nvim'}
+    use {'nvim-telescope/telescope.nvim'}
+    use {'nvim-telescope/telescope-media-files.nvim'}
+
 end)

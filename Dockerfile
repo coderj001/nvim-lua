@@ -29,5 +29,7 @@ RUN mkdir -p ~/.config/nvim
 RUN apt-get install -y \
     ripgrep ctags
 
+RUN npm i -g neovim
+
 WORKDIR /root
 ENTRYPOINT /bin/bash

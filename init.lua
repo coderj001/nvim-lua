@@ -1,5 +1,6 @@
 require('plugins')
 require('options')
+require('functions')
 require('mappings')
 require('nv-compe')
 require('lsp')
