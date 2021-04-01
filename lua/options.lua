@@ -50,10 +50,9 @@ local function load_options()
         nowb = true;
         noswapfile = true;
         updatetime = 300;
+        termguicolors = true;
     }
     bind_option(global_local)
 end
 
 load_options()
-
-

@@ -13,6 +13,7 @@ function global:load_variables()
   self.path_sep = path_sep
   self.home = home
   self.data_dir = string.format('%s/site/',vim.fn.stdpath('data'))
+  self.username = 'coderj001'
 end
 
 global:load_variables()

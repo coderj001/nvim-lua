@@ -22,7 +22,7 @@ RUN git clone https://github.com/wbthomason/packer.nvim\
 
 RUN apt-get install -y python3-pip lua5.3 nodejs npm
 RUN pip3 install pynvim
-RUN npm i tree-sitter-cli
+RUN npm i -g tree-sitter-cli --unsafe-perm=true --allow-root
 
 RUN mkdir -p ~/.config/nvim
 

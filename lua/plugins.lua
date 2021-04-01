@@ -10,6 +10,9 @@ end
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-compe'
+    use 'hrsh7th/vim-vsnip'
     use {
     'kyazdani42/nvim-web-devicons', config = function() require 'config/web-devicons' end,
     }
@@ -25,5 +28,5 @@ return require('packer').startup(function()
     'glepnir/galaxyline.nvim', branch = 'main', config = function() require 'statusline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
     }
-    use {'dracula/vim', as = 'dracula', config=function () vim.cmd('colorscheme dracula') end}
+    use {'rockerBOO/boo-colorscheme-nvim', branch = 'main', as = 'boo', config=function () vim.cmd('colorscheme boo') end}
 end)

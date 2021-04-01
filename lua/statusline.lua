@@ -1,13 +1,26 @@
+local global = require('global')
 local gl = require('galaxyline')
 local colors = require('galaxyline.theme').default
 local condition = require('galaxyline.condition')
 local gls = gl.section
-gl.short_line_list = {'NvimTree','vista','dbui','packer'}
+
+gl.short_line_list = {
+    'LuaTree',
+    'vista',
+    'dbui',
+    'startify',
+    'term',
+    'nerdtree',
+    'fugitive',
+    'fugitiveblame',
+    'plug',
+    'NvimTree'
+}
 
 gls.left[1] = {
   RainbowRed = {
-    provider = function() return '▊ ' end,
-    highlight = {colors.blue,colors.bg}
+    provider = function() return '🚀'..global.username..' ' end,
+    highlight = {colors.blue,colors.bg, 'bold'}
   },
 }
 gls.left[2] = {
@@ -23,7 +36,7 @@ gls.left[2] = {
                           rm = colors.cyan, ['r?'] = colors.cyan,
                           ['!']  = colors.red,t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
-      return '  '
+      return ' ['..string.upper(vim.fn.mode())..'] '
     end,
     highlight = {colors.red,colors.bg,'bold'},
   },
