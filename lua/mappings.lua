@@ -3,7 +3,6 @@ vim.g.mapleader = ','
 -- NORMAL MODE
 vim.api.nvim_set_keymap('n', '<Leader><cr>', ':noh<cr>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>w', ':w!<cr>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<cr>', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-W>j', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-W>k', {silent = true})

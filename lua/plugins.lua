@@ -9,21 +9,21 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim'}
     use 'neovim/nvim-lspconfig'
     use {'kabouzeid/nvim-lspinstall', require='neovim/nvim-lspconfig'}
     use 'hrsh7th/nvim-compe'
     use 'hrsh7th/vim-vsnip'
     use {
-    'kyazdani42/nvim-web-devicons', config = function() require 'config/web-devicons' end,
+    'kyazdani42/nvim-web-devicons', config = function() require 'config/web-devicons'.setup() end,
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-    config = function () require 'config/treesitter' end,
+    config = function () require 'config/treesitter'.setup() end,
     }
     use { 'nvim-treesitter/playground'}
     use {
     'kyazdani42/nvim-tree.lua', as = 'nvimtree', requires = {'kyazdani42/nvim-web-devicons'},
-    config = function () require 'config/nerdtree' end,
+    config = function () require 'config/nerdtree'.setup() end,
     }
     use {
     'glepnir/galaxyline.nvim', branch = 'main', config = function() require 'statusline' end,

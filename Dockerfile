@@ -27,7 +27,7 @@ RUN npm i -g tree-sitter-cli --unsafe-perm=true --allow-root
 RUN mkdir -p ~/.config/nvim
 
 RUN apt-get install -y \
-    ripgrep ctags
+    ripgrep ctags fzf
 
 RUN npm i -g neovim
 
