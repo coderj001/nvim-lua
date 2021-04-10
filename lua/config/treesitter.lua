@@ -16,7 +16,11 @@ function M.setup()
         },
         autotag = {enable = true},
         rainbow = {enable = true},
-        context_commentstring = {enable = true, config = {javascriptreact = {style_element = '{/*%s*/}'}}}
+        context_commentstring = {enable = true, config = {javascriptreact = {style_element = '{/*%s*/}'}}},
+        refactor = {
+            highlight_definitions = { enable = true },
+            highlight_current_scope = { enable = true }
+          },
     }
 end
 
